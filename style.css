@@ -1,0 +1,87 @@
+
+body{
+
+    background-image: linear-gradient(#101011,rgb(68, 41, 41)),radial-gradient( circle at top ,#1b051b,#0a0202);;
+}
+.container{
+    margin:0 40px;
+}
+.site{
+
+    color: whitesmoke;
+    font-size: 40px;
+    text-align: center;
+}
+.card{
+
+    box-shadow: 0 4px 8px 0 white;
+  transition: 0.3s;
+  max-width: 18%;height: auto;
+ position: fixed;
+  right: 0;
+  border-radius: 5px;
+  overflow: visible;
+}
+.card p{
+    display:inline ;
+    color:white;
+    left:0;
+}
+.card p:nth-child(even)::before{
+
+    
+        content: " Total :";
+      
+}
+
+#list{
+
+    color: thistle;
+}
+.heading{
+
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px purple;
+    margin:30px auto;
+   text-align: center;
+}
+.moviename{
+    color: white;
+
+}
+.addtocart{
+    background-color: rgb(192, 123, 78); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px
+}
+.addtocart:hover{
+    background-color: tomato;
+}
+.addtocart:active{
+    background-color: rgb(104, 155, 89);
+}
+
+.imageContainer{
+
+    display: flex;
+    max-width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
+.imageContainer div{
+    margin-top: 20px;
+}
+.imageContainer div img{
+    max-width: 240px;
+    max-height: 210px;
+   
+    margin-right: 14vmin;
+
+}
