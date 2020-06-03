@@ -23,7 +23,7 @@ function remove(movie)
         total=total-40;}
     else{
 
-        alert("delete pressed");
+        alert("you didn't selected this movie yet");
     }
 
 }
