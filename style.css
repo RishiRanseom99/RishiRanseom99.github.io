@@ -1,3 +1,11 @@
-#app{
+#app,#root{
     text-align: center;
+    margin-bottom: 10vmin;
+}
+#myChart{
+    width:50%;
+    
+}
+#root a{
+    text-decoration: none;
 }

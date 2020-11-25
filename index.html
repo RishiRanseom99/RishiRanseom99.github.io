@@ -8,6 +8,7 @@
     
     <script src="https://unpkg.com/d3@3/d3.min.js"></script>
    <script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<meta name="theme-color" content="#000000">
 	
 	<title> App</title>
@@ -23,7 +24,29 @@
         </form>
 
         </div>
-	<div id="root"></div>
+	<div id="root">
+        <p>Enter your x and y inputs in comma separated way</p>
+        <form>
+        <label for="Xaxis">X inputs</label>
+        <input id="Xaxis" type="text" placeholder="1,2,3,4"/>
+        <label for="Yaxis"  >Y inputs</label>
+        <input id="Yaxis" type="text" placeholder="2014,2015,2016,2017"/>
+        <select id="typeOfChart">
+            <option name="line" value="line">Line</option>
+            <option name="bar" value="bar">Bar</option>
+            <option name="pie" value="pie">Pie</option>
+            <option name="radar" value="radar">Radar</option>
+            <option name="polarArea" value="polarArea">Polar Area</option>
+        </select>
+        <button id="show" type="submit">Show</button>
+        <a id="download"
+        download="ChartImage.jpg" 
+        href=""
+        title="Descargar Gráfico">Download</a>
+        </form>
+        <canvas id="myChart"></canvas>
+
+    </div>
 	
     <script type="module" src="./main.js"></script>
 </body>
