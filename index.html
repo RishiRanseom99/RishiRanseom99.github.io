@@ -15,39 +15,57 @@
 </head>
 
 <body>
-	<div id="app">
-        <h1>Plot your graph using equations</h1>
-        <p>Enter your 2D equation in x form like:x^2 , x^4+x^2+1</p> 
-        <form> 
-        <input id="input" type="text"></input>
-        <button id="plot">Plot</button>
-        </form>
+    <div id="main_app">
+        <div id="heading">
+            <h1 id="head">Plot &Visualize</h1>
 
         </div>
-	<div id="root">
-        <p>Enter your x and y inputs in comma separated way</p>
-        <form>
-        <label for="Xaxis">X inputs</label>
-        <input id="Xaxis" type="text" placeholder="1,2,3,4"/>
-        <label for="Yaxis"  >Y inputs</label>
-        <input id="Yaxis" type="text" placeholder="2014,2015,2016,2017"/>
-        <select id="typeOfChart">
-            <option name="line" value="line">Line</option>
-            <option name="bar" value="bar">Bar</option>
-            <option name="pie" value="pie">Pie</option>
-            <option name="radar" value="radar">Radar</option>
-            <option name="polarArea" value="polarArea">Polar Area</option>
-        </select>
-        <button id="show" type="submit">Show</button>
-        <a id="download"
-        download="ChartImage.jpg" 
-        href=""
-        title="Descargar Gráfico">Download</a>
-        </form>
-        <canvas id="myChart"></canvas>
+        <div id="plotEquation">
+            <h1>Plot your graph using equations</h1>
+            <form id="plotEquation__form"> 
+            <label for="equation1">Equation-1 </label>
+            <input id="equation1" class="input" type="text"></input>
+            <label for="equation2">Equation-2 </label>
+            <input id="equation2"class="input" type="text"></input>
 
-    </div>
-	
+            <button id="plot">Plot</button>
+            <!-- <button><a id="downloadGraph"
+                download="GraphImage.jpg" 
+                href=""
+                title="Descargar Gráfico">Download</a></button> -->
+            </form>
+            <div id="warning">
+            <p>Note:Equations must be in form of x and y </p>
+            <p>Note:There is not need of = operator, put equations by taking ever everything on left side</p>
+            <p>Examples: 2*x+y-9, x*x+y*y-9</p>
+             </div>
+             <div id="canvasDisplay"></div>
+            </div>
+        <div id="dataVisualize">
+            <h1>Visualize your Data</h1>
+            <p>Enter your x and y inputs in comma separated manner</p>
+            <form id="dataVisualize__form">
+            <label for="Xaxis">X inputs</label>
+            <input id="Xaxis" type="text" placeholder="1,2,3,4"/>
+            <label for="Yaxis"  >Y inputs</label>
+            <input id="Yaxis" type="text" placeholder="2014,2015,2016,2017"/>
+            <select id="typeOfChart">
+                <option name="line" value="line">Line</option>
+                <option name="bar" value="bar">Bar</option>
+                <option name="pie" value="pie">Pie</option>
+                <option name="radar" value="radar">Radar</option>
+                <option name="polarArea" value="polarArea">Polar Area</option>
+            </select>
+            <button id="show" type="submit">Show</button>
+            <button><a id="download"
+            download="ChartImage.jpg" 
+            href=""
+            title="Descargar Gráfico">Download</a></button>
+            </form>
+            <canvas id="myChart"></canvas>
+
+        </div>
+   </div>
     <script type="module" src="./main.js"></script>
 </body>
 

@@ -1,40 +1,63 @@
 
 
 
-let val="";
+let val1="",val2="";
 
-const input=document.getElementById('input');
-input.addEventListener('change',function(){
-    val=input.value;
-    //console.log("value:  "+val)
+const input=document.getElementsByClassName('input');
+// input.addEventListener('change',function(){
+//     val=input.value;
+//     //console.log("value:  "+val)
     
-})
- plot("X^2");
+// })
+plot("y","x");
 document.getElementById('plot').addEventListener('click',function(e){
 e.preventDefault();
 //console.log(val);
-    plot(val);
-})
+val1=" ";
+val2=" ";
 
-function plot(value){
+    val1=input[0].value;
+    val2=input[1].value;
+        
+
+    plot(val1,val2);
+
+});
+
+function plot(value1,value2){
     let contentsBounds = document.body.getBoundingClientRect();
-    //console.log(contentsBounds);
-    value=value.toLowerCase();
-    let width = 800;
-    let height = 300;
+    console.log(contentsBounds);
+    value1=value1.toLowerCase();
+    value2=value2.toLowerCase();
+    let width = 700;
+    let height =400;
     let ratio = contentsBounds.width / width;
-    width *= ratio;
-    height *= ratio;    
+    console.log(contentsBounds.width,contentsBounds.height,ratio,width*ratio,height*ratio);
+    if(ratio<1)
+    { 
+        ratio+=0.5;
+        width *= ratio;
+        height *= ratio;
+    }   
+    
     functionPlot({
-        target: "#app",
-       title:"Plotted graph",
+        target: "#canvasDisplay",
+        // title:"Graph",
         width,
         height,
-        yAxis: { domain: [-1, 9] },
+        disableZoom: false,
+        xAxis: {
+            label: 'x - axis',
+            domain: [-10, 10]
+          },
+          yAxis: {
+            label: 'y - axis'
+          },
         grid: true,
         data: [
           
-            {fn: value}
+            {fn: value1,fnType: 'implicit'}
+            ,{fn: value2,fnType: 'implicit'}
            
           
           
@@ -117,6 +140,30 @@ document.getElementById("download").addEventListener('click', function(){
     // var pdf = new jsPDF('p', 'mm');
     // pdf.addImage(url_base64jp, 'jpg', 10, 10);
     // pdf.save('screenshot.pdf');
+    
+    
+    
+   
+  });
+  document.getElementById("downloadGraph").addEventListener('click', function(){
+    
+    // var url_base64jp = document.querySelector("function-plot").toDataURL("image/jpg");
+    // var a =  document.getElementById("downloadGraph");
+    // a.href = url_base64jp;
+    // var pdf = new jsPDF('p', 'mm');
+    // pdf.addImage(url_base64jp, 'jpg', 10, 10);
+    // pdf.save('screenshot.pdf');
+    var svg = document.querySelector('#function-plot');
+    var data = (new XMLSerializer()).serializeToString(svg);
+
+    var canvas = document.createElement('canvas');
+    canvg(canvas, data, {
+    renderCallback: function() {
+    canvas.toBlob(function(blob) {
+        download('MyImageName.png', blob);
+    });
+  }
+});
     
     
     

@@ -1,11 +1,112 @@
-#app,#root{
+#main_app{
+    /* padding:10vmin;
+    padding-top: 0em; */
+    border: 2px solid white;
     text-align: center;
-    margin-bottom: 20vmin;
+    
+    box-sizing: border-box;
+
 }
-#myChart{
-    width:50%;
+#heading h1{
+    font-size: 12vmin;
+    font-weight: 100px;
+}
+#heading{
+    background-color: rgb(247, 247, 140);
+    margin-top: 0;
+    border: 3px solid white;
+}
+#plotEquation{
+    border: 2px solid white;
+    margin-bottom: 10vmin;
+    text-align: center;
+    overflow-x: hidden;
+    margin: auto;
+    width:90%
+}
+#plotEquation__form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+#dataVisualize__form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+@media (max-width: 480px) {
+    #plotEquation{
+        width:100%;
+    }
+    #canvasDisplay {
+        
+        width: 98%;
+        
+        
+    }
+    #plotEquation__form{
+        margin: 0vmin 2vmin;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+    #dataVisualize__form{
+        margin: 0vmin 2vmin;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+    #typeOfChart,#show,#Yaxis,#equation2,#plot{
+        margin-bottom: 1.5vmin;
+    }
+}
+#canvasDisplay{
+    border: 1px solid rgb(252, 249, 249);
+    width: 99%;
+    margin: auto;
+    overflow-x: hidden;
+}
+#canvasDisplay svg{
+  
+  border: 5px solid rgb(250, 250, 252);
+  /* margin: auto;
+  width: 99%; */
+  
+
+}
+
+
+
+#warning{
+    
+    color: red;
+    /* text-align: left; */
+    /* text-indent:35%; */
+}
+
+
+#dataVisualize{
+    border: 2px solidwhite;
+    text-align: center;
+}
+#dataVisualize canvas{
+    max-width: 55%;
+    margin: auto;
     
 }
-#root a{
+@media (max-width: 480px) {
+    #dataVisualize canvas{
+        max-width: 100%;
+        margin: auto;
+        
+    }
+}
+/* #myChart{
+    width:50%;
+    
+} */
+a{
     text-decoration: none;
 }
